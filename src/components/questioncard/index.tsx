@@ -1,6 +1,6 @@
 import React, { MouseEvent } from 'react';
 
-import Appbutton from '@/components/button';
+import Appbutton from '@/components/button/index';
 import { Box, Flex, Heading } from '@chakra-ui/react';
 
 interface QuestionCardProps {

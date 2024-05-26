@@ -3,4 +3,4 @@ export default interface AnswerObject {
     answer: string; 
     correct: boolean;
     correctAnswer: string;
-};
+}
