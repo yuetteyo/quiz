@@ -1,16 +1,20 @@
 import axios from "axios";
 
-const baseURL = "https://opentdb.com/api.php?amount=5&type=boolean";
+import { Questions } from '@/interface/questions.interface';
 
+const baseURL = "https://opentdb.com/api.php?amount=10";
+
+
+// amount: number,
+// difficulty: string,
 export const getQuestionList = async (
-    amount: number,
-    difficulty: string,
-): Promise<unknown> => {
-    try{
-        const response = await axios.get(`${baseURL}${amount}&difficulty=${difficulty}&type=boolean`);
-        return response.data.result;
+) => {
+    try {
+        // const response = await axios.get(`${baseURL}${amount}&difficulty=${difficulty}&type=boolean`);
+        const { data } = await axios.get<Questions>(baseURL);
+        return data;
     }
-    catch(error){
+    catch (error) {
         throw new Error(`Error fetching the questions. ${error}`);
     }
 };
