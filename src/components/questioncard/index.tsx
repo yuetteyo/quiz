@@ -1,14 +1,14 @@
 import React, { MouseEvent } from 'react';
 
-import Appbutton from '@/components/button/index';
+import Appbutton from '@/components/button';
 import { Box, Flex, Heading, Spacer } from '@chakra-ui/react';
 
 interface QuestionCardProps {
     questions: string;
     category: string;
     totalQuestions?: number;
-    questionNumber: number; //?:
-    callback: (e: MouseEvent<HTMLButtonElement>) => void; // Function
+    questionNumber: number;
+    callback: (e: MouseEvent<HTMLButtonElement>) => void; // TODO: check how to fix
 }
 
 const QuestionCard: React.FC<QuestionCardProps> = ({

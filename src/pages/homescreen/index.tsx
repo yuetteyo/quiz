@@ -69,10 +69,14 @@ const Homepage = () => {
         setQuestionNumber(nextQuestion);
     };
 
-    const replayQuiz = () => {
-        console.log("replay");
-    }
-
+    const replayQuiz = (): void => {
+        // console.log("replay");
+        setStartQuiz(false);
+        setGameOver(false);
+        setQuestionNumber(0);
+        setScore(0);
+        setUserAnswer([]);
+    };
 
     return (
         <div>
