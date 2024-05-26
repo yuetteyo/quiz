@@ -1,7 +1,7 @@
 import React, { MouseEvent } from 'react';
 
 import Appbutton from '@/components/button/index';
-import { Box, Flex, Heading } from '@chakra-ui/react';
+import { Box, Flex, Heading, Spacer } from '@chakra-ui/react';
 
 interface QuestionCardProps {
     questions: string;
@@ -24,15 +24,15 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
                 <Box mb={6} fontSize={"md"} fontWeight={"bold"} textTransform={"uppercase"}>
                     Your progress: {questionNumber}/{totalQuestions}
                 </Box>
-                <Box>
+                <Box fontSize="sm" mb={1}>
                     {category}
                 </Box>
-                <Heading>
-                    <Box>{questions}</Box>
+                <Heading as="h1" size="lg">
+                    <Box mb={6}>{questions}</Box>
                 </Heading>
 
-                <Flex>
-                    <Box>
+                <Flex direction="column">
+                    <Box w="100%" mb={4}>
                         <Appbutton
                             colorScheme="purple"
                             variant="outline"
@@ -40,6 +40,9 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
                             width="full"
                             onClick={callback}
                         />
+                        </Box>
+                        <Spacer />
+                        <Box w="100%" mb={4}>
                         <Appbutton
                             colorScheme="purple"
                             variant="outline"
