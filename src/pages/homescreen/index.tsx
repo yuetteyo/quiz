@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Difficulty, totalQuestions } from "@/constants/index";
 import { getQuestionList } from "@/services/fetchquestions";
 import { QuestionProps, AnswerObject } from "@/interface/index"
@@ -29,9 +29,21 @@ const Homepage = () => {
         fetchQuestions();
     }, []);
 
-    const checkAnswer = () => {
-        console.log("check answer"); // IS IT OK?
-        setQuestionNumber(1);
+    const checkAnswer = (e: React.FormEvent<HTMLFormElement>): void => {
+        e.preventDefault();
+        if(gameOver) return;
+        const choosenAnswer = e.currentTarget.innerText;
+        const correct = questions[questionNumber].correct_answer === choosenAnswer;
+        if(correct) setScore((previous) => previous + 1);
+        if(userAnswer.length != questionNumber) {
+            console.log("more than 1 clicked");
+        }
+        const AnswerObject = {
+            question: questions[questionNumber]?.question,
+            answer: choosenAnswer,
+            correct,
+            correctAnswer: questions[questionNumber]?.correct_answer,
+        }
     };
 
     const startQuizGame = (): void => {
