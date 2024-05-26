@@ -44,6 +44,7 @@ const Homepage = () => {
             correct,
             correctAnswer: questions[questionNumber]?.correct_answer,
         }
+        setUserAnswer ((previous) => [...previous, AnswerObject]);
     };
 
     const startQuizGame = (): void => {
