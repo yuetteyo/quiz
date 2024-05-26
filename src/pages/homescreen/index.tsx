@@ -36,14 +36,26 @@ const Homepage = () => {
         const correct = questions[questionNumber].correct_answer === choosenAnswer;
         if(correct) setScore((previous) => previous + 1);
         if(userAnswer.length != questionNumber) {
-            console.log("more than 1 clicked");
+            if(!correct) setScore((previous) => previous - 1);
+            const lastIndex = userAnswer.length - 1; 
+            if(lastIndex >= 0) {
+                userAnswer.splice(lastIndex, 1);
+                const AnswerObject = {
+                    question: questions[questionNumber]?.question,
+                    answer: choosenAnswer,
+                    correct,
+                    correctAnswer: questions[questionNumber]?.correct_answer,
+                };
+                setUserAnswer ((previous) => [...previous, AnswerObject]);
+            }
+            return; 
         }
         const AnswerObject = {
             question: questions[questionNumber]?.question,
             answer: choosenAnswer,
             correct,
             correctAnswer: questions[questionNumber]?.correct_answer,
-        }
+        };
         setUserAnswer ((previous) => [...previous, AnswerObject]);
     };
 
