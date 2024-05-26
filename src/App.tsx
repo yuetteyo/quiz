@@ -1,4 +1,4 @@
-import Homepage from '@/components/form-start'
+import Homepage from '@/pages/homescreen'
 
 const App = () => {
   return (
