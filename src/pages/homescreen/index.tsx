@@ -64,9 +64,14 @@ const Homepage = () => {
         setStartQuiz(true);
     }
 
-    const nextQuestion = () => {
-        console.log("next question");
-    }
+    const nextQuestion = (e: React.FormEvent<HTMLFormElement>): void => {
+        e.preventDefault();
+        const nextQuestion = questionNumber + 1;
+        if (totalQuestions === nextQuestion) {
+            setGameOver(true);
+        }
+        setQuestionNumber(nextQuestion);
+    };
 
     const replayQuiz = () => {
         console.log("replay");
