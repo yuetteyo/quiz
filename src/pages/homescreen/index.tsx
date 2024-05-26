@@ -34,7 +34,7 @@ const Homepage = () => {
         setQuestionNumber(1);
     };
 
-    const startQuizGame = () => {
+    const startQuizGame = (): void => {
         // console.log("start quiz game");
         setStartQuiz(true);
     }
