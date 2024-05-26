@@ -1,29 +1,39 @@
-import {Button} from "@chakra-ui/react";
-import {ButtonProps} from "@/interface/index";
-import React from "react";
+import React, { MouseEvent } from 'react';
 
-const Appbutton: React.FC<ButtonProps> = ({
+import { Button } from '@chakra-ui/react';
+
+interface AppbuttonProps {
+    value: string;
+    onClick: (evt: MouseEvent<HTMLButtonElement>) => void; // Function
+    colorScheme: string;
+    variant: string;
+    className?: string;
+    disabled?: boolean; //any
+    width?: string;
+}
+
+const Appbutton: React.FC<AppbuttonProps> = ({
     value,
     onClick,
     colorScheme,
-    variant, 
+    variant,
     className,
     disabled,
     width,
 }) => {
-    return(
+    return (
         <>
-        <Button
-        onClick={(evt) => onClick(evt)}
-        colorScheme={colorScheme}
-        variant={variant}
-        className={className}
-        disabled={disabled}
-        w={width}
-        >
-            {value}
+            <Button
+                onClick={onClick}
+                colorScheme={colorScheme}
+                variant={variant}
+                className={className}
+                disabled={disabled}
+                w={width}
+            >
+                {value}
 
-        </Button>
+            </Button>
         </>
     )
 }
