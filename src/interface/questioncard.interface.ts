@@ -2,6 +2,6 @@ export default interface QuestionCardProps {
     questions: string;
     category: string;
     totalQuestions?: number;
-    questionNumber?: number;
-    callback: unknown; // Function
+    questionNumber: number; //?:
+    callback: () => void; // Function
 }

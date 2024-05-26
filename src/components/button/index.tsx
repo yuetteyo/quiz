@@ -14,7 +14,7 @@ const Appbutton: React.FC<ButtonProps> = ({
     return(
         <>
         <Button
-        onClick={(Event) => onClick(Event)}
+        onClick={(evt) => onClick(evt)}
         colorScheme={colorScheme}
         variant={variant}
         className={className}

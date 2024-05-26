@@ -2,10 +2,10 @@ import { Interface } from "readline";
 
 export default interface ButtonProps {
     value: string;
-    onClick: unknown; // Function
+    onClick: (a: unknown) => void; // Function
     colorScheme: string;
     variant: string; 
     className?: string;
-    disabled?: boolean; //any
+    disabled?: string; //any
     width?: string;
 }
