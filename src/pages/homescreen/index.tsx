@@ -7,6 +7,8 @@ import { Question } from '@/interface/question.interface';
 import { getQuestionList } from '@/services/fetchquestions';
 import { Box, Divider, Heading } from '@chakra-ui/react';
 
+import "./index.css"
+
 const Homepage = () => {
     const [questions, setQuestions] = useState<Question[]>([]);
     const [questionNumber, setQuestionNumber] = useState(0);
