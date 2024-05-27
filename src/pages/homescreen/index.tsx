@@ -51,11 +51,9 @@ const Homepage = () => {
     const startQuizGame = async () => {
         const questionListing = await getQuestionList(
             // totalQuestions, Difficulty.HARD
+            setLoading
         );
-        console.log(questionListing);
-        setQuestions(questionListing.results) // TODO: CHANGE THE TYPE
-        setLoading(false);
-
+        setQuestions(questionListing.results) 
         setStartQuiz(true);
     }
 
