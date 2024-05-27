@@ -2,7 +2,7 @@ import axios from "axios";
 
 import { Questions } from '@/interface/questions.interface';
 
-const baseURL = "https://opentdb.com/api.php?amount=10";
+const baseURL = "https://opentdb.com/api.php?amount=10&type=boolean";
 
 
 // amount: number,

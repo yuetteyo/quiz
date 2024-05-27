@@ -84,7 +84,7 @@ const Homepage = () => {
                 <>
                     <div className="greeting-box">
                         <Box boxShadow="base" p="6" rounded="md" bg="white" maxW="560px">
-                            <Heading as="h1" size="lg" mb={2}>
+                            <Heading as="h2" size="lg" mb={2}>
                                 Hi there!
                             </Heading>
                             <p>
